@@ -100,8 +100,8 @@ void SceneTest::calcLine(Vec2 lineStart, Vec2 lineEnd)
 	normalField.x = Game::kScreenWidth;
 	normalField.y = 0.0f;
 	normalField.z = 0.0f;
-	MATRIX mtx = MGetRotVec2(field, normalField);
-	MATRIX invMtx = MInverse(mtx);
+	MATRIX mtx = MGetRotVec2(field, normalField);	// 回転行列の生成
+	MATRIX invMtx = MInverse(mtx);					// 逆行列の生成
 
 	// objが線よりも下に行っていないか確認する
 	VECTOR toObj;
