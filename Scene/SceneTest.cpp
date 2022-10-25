@@ -108,7 +108,15 @@ void SceneTest::calcLine(Vec2 lineStart, Vec2 lineEnd)
 	// 地面と当たっていない
 	if (toObj2.y < 0.0f)	return;
 
-	// 地面と当たっているので反射処理
+	// 地面に当たっている
+
+	// 地面より上に来るようにする
+	toObj2.y = 0.0f;
+	toObj = VTransform(toObj2, invMtx);
+	m_objPos.x = toObj.x + lineStart.x;
+	m_objPos.y = toObj.y + lineStart.y;
+
+	// 反射処理
 	VECTOR objVec;
 	objVec.x = m_objVec.x;
 	objVec.y = m_objVec.y;
