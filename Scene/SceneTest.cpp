@@ -40,26 +40,31 @@ SceneBase* SceneTest::update()
 	// 4•Ó‚Æ‚Ì“–‚½‚è
 	if ((m_objPos.x < 0.0f) && (m_objVec.x < 0.0f))
 	{
+		m_objPos.x = 0.0f;
 		m_objVec.x *= -1.0f;
 	}
 	if ((m_objPos.x > Game::kScreenWidth) && (m_objVec.x > 0.0f))
 	{
+		m_objPos.x = Game::kScreenWidth;
 		m_objVec.x *= -1.0f;
 	}
 	if ((m_objPos.y < 0.0f) && (m_objVec.y < 0.0f))
 	{
+		m_objPos.y = 0.0f;
 		m_objVec.y *= -1.0f;
 	}
 	if ((m_objPos.y > Game::kScreenHeight) && (m_objVec.y > 0.0f))
 	{
+		m_objPos.y = Game::kScreenHeight;
 		m_objVec.y *= -1.0f;
 	}
 
+#if false
 	calcLine(kFieldPos0, kFieldPos1);
 	calcLine(kFieldPos1, kFieldPos2);
 	calcLine(kFieldPos2, kFieldPos3);
 	calcLine(kFieldPos3, kFieldPos0);
-
+#endif
 	return this;
 }
 
