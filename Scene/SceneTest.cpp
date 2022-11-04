@@ -59,7 +59,7 @@ SceneBase* SceneTest::update()
 		m_objVec.y *= -1.0f;
 	}
 
-#if false
+#if true
 	calcLine(kFieldPos0, kFieldPos1);
 	calcLine(kFieldPos1, kFieldPos2);
 	calcLine(kFieldPos2, kFieldPos3);
